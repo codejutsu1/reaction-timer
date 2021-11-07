@@ -1,5 +1,8 @@
 <template>
   <h1>Reaction Timer</h1>
+  <p v-if="!isClick" class="p">
+    Records how fast you click on the green box that appears below after clicking play :)
+  </p>
   <button @click="start" :disabled="isPlaying">
     Play
   </button>
@@ -21,6 +24,7 @@ export default {
   data() {
     return {
       isPlaying: false,
+      isClick: false,
       delay: null,
       score: null,
       showResults: false,
@@ -33,6 +37,7 @@ export default {
       this.isPlaying = true
       this.delay = 2000 + Math.random() * 5000
       this.showResults = false  
+      this.isClick = true
     },
     endGame(reactionTime) {
       this.isPlaying = false
@@ -69,5 +74,8 @@ button {
 button[disabled] {
   opacity: 0.2;
   cursor:  not-allowed;
+}
+.p{
+  letter-spacing: 1px;
 }
 </style>

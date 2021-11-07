@@ -25,7 +25,7 @@ export default {
         }else if(this.score < 400){
             this.rank = "Rapid Reflexes"
         }else{
-            this.rank = 'Snail pace...'
+            this.rank = 'Snail pace... :('
         }
     }
 }
